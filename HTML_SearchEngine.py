@@ -15,6 +15,7 @@ class HTML_SearchEngine:
     def choose_Tag(self, Tag):
         self._chosen_Tag = self._tag.get(Tag)
 
+#What_do_you_search können auch gemeinsame merkmale sein zb href mit /wiki/[unterschiedliche namen]
     def search_for(self,What_do_you_search):
         Result_List = []
         if self._multipleValues == True:
@@ -25,8 +26,10 @@ class HTML_SearchEngine:
                 for item in self._Html_Code.findAll(ID=What_do_you_search):
                     Result_List.append(item)
             elif self._chosen_Tag == 3 or self._chosen_Tag == "a":
-                for item in self._Html_Code.findAll(a=What_do_you_search):
-                    Result_List.append(item)
+                templist = []
+                for item in self._Html_Code.findAll('a'):
+                    templist.append(item.get('href'))
+                Result_List = [item for item in templist if What_do_you_search in str(item)] #get substring What_do_you_search from items
             self._results = Result_List
             return Result_List
         else:
