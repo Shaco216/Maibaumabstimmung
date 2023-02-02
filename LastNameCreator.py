@@ -29,7 +29,8 @@ class LastNameCreator:
         self._searcher.choose_Tag(3)
         self._searcher.search_for("/wiki/")
         #self._searcher.filter_to_only_text()
-        self._result = self._searcher.get_current_results()
+        self._searcher.filter_all_hrefs(["Verzeichnis","Spezial","wikidata","Wiktionary","wikimedia","Hilfe:Hinweise"])
+        #self._result = self._searcher.get_current_results()
         self._searcher.show_current_results()
 
 

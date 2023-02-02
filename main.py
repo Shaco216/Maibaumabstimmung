@@ -8,5 +8,5 @@ from LastNameCreator import *
 
 lastname_collection = LastNameCreator()
 lastname_collection.get_all_Last_Names()
-lastname_collection.filter_all_hrefs()
+
 

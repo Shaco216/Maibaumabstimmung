@@ -70,12 +70,32 @@ class HTML_SearchEngine:
             return self._filtered_results
 
     def filter_all_hrefs(self, words_to_filter_for):
+        #Creating a negative list
         Result_List = []
+        Final_result = []
+        #Removing words by checking item by item inside list
         if len(self._results) > 0 and self._filtered_results is None:
+            Result_List = self._results
             for word in words_to_filter_for:
-                Result_List = [item for item in self._result if word not in str(item)]
-
+                counter = 0
+                for item in self._results:
+                    if word in str(item):
+                        Result_List[counter] = "0"
+                    counter = counter + 1
+            #Hinzufügen aller items die nicht 0 als wert haben
+            for res in Result_List:
+                if res != "0":
+                    Final_result.append(res)
         else:
+            Result_List = self._filtered_results
             for word in words_to_filter_for:
-                Result_List = [item for item in self._filtered_results if word not in str(item)]
-        _filtered_results = Result_List
+                counter = 0
+                for item in self._filtered_results:
+                    if word in str(item):
+                        Result_List[counter] = "0"
+                    counter = counter + 1
+            #Hinzufügen aller items die nicht 0 als wert haben
+            for res in Result_List:
+                if res != "0":
+                    Final_result.append(res)
+        _filtered_results = Final_result
