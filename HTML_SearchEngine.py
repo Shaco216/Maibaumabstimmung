@@ -68,3 +68,14 @@ class HTML_SearchEngine:
             return self._results
         else:
             return self._filtered_results
+
+    def filter_all_hrefs(self, words_to_filter_for):
+        Result_List = []
+        if len(self._results) > 0 and self._filtered_results is None:
+            for word in words_to_filter_for:
+                Result_List = [item for item in self._result if word not in str(item)]
+
+        else:
+            for word in words_to_filter_for:
+                Result_List = [item for item in self._filtered_results if word not in str(item)]
+        _filtered_results = Result_List
