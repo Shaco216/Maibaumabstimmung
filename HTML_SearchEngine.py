@@ -15,7 +15,12 @@ class HTML_SearchEngine:
     def choose_Tag(self, Tag):
         self._chosen_Tag = self._tag.get(Tag)
 
-#What_do_you_search können auch gemeinsame merkmale sein zb href mit /wiki/[unterschiedliche namen]
+    def show_filtered_results(self):
+        return self._filtered_results
+    def show_unfiltered_results(self):
+        return self._results
+
+    #What_do_you_search können auch gemeinsame merkmale sein zb href mit /wiki/[unterschiedliche namen]
     def search_for(self,What_do_you_search):
         Result_List = []
         if self._multipleValues == True:
@@ -98,4 +103,5 @@ class HTML_SearchEngine:
             for res in Result_List:
                 if res != "0":
                     Final_result.append(res)
-        _filtered_results = Final_result
+        self._filtered_results = Final_result
+
