@@ -105,3 +105,25 @@ class HTML_SearchEngine:
                     Final_result.append(res)
         self._filtered_results = Final_result
 
+    def set_filtered_results(self, filtered_results):
+        self._filtered_results = filtered_results
+
+    def set_results(self, results):
+        self._results = results
+
+    def replacing_all_targeted_characters_in_hrefs_with_one_desired_character(self, character_or_words_list, desired_character_or_word):
+        Result_list = []
+        if len(self._results) > 0 and self._filtered_results is None:
+            for item in self._results:
+                for word in character_or_words_list:
+                    if word in str(item):
+                        Result_list.append(item.replace(word,desired_character_or_word))
+        else:
+            for item in self._filtered_results:
+                for word in character_or_words_list:
+                    if word in str(item):
+                        Result_list.append(item.replace(word,desired_character_or_word))
+        self._filtered_results = Result_list
+
+
+
