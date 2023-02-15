@@ -23,3 +23,6 @@ class FullNameRandomizer:
 
     def Show_Full_Names_List(self):
         return print(self._Namelist)
+
+    def Get_Namelist(self):
+        self._Namelist

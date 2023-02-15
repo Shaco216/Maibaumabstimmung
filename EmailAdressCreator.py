@@ -3,13 +3,13 @@ import string
 
 
 class EmailAdressCreator:
-    namelist = []
-    EmailAddressList = []
-    options = {"f.lastname":1,"firstname.lastname":2,"firstname.l":3}
-    currentEmailaddress = ""
-    Availability_current_EMail_Address = False
-    domainname = ""
-    EMaillist_with_domainname = []
+    _namelist = []
+    _EmailAddressList = []
+    _options = {"f.lastname":1,"firstname.lastname":2,"firstname.l":3}
+    _currentEmailaddress = ""
+    _Availability_current_EMail_Address = False
+    _domainname = ""
+    _EMaillist_with_domainname = []
     def __init__(self,namelist):
         self.namelist = namelist
 

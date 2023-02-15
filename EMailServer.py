@@ -7,6 +7,9 @@ from smtpd import SMTPServer
 
 class EmlServer(SMTPServer):
     no = 0
+    foo = 0
+    def __init__(self):
+        pass
     def process_message(self, peer, mailfrom, rcpttos, data):
         filename = '%s-%d.eml' % (datetime.now().strftime('%Y%m%d%H%M%S'),
                 self.no)
@@ -17,10 +20,13 @@ class EmlServer(SMTPServer):
         self.no += 1
 
 
-def run():
-    # start the smtp server on localhost:1025
-    foo = EmlServer(('localhost', 1025), None)
-    try:
-        asyncore.loop()
-    except KeyboardInterrupt:
-        pass
+    def run(self):
+        # start the smtp server on localhost:1025
+        self.foo = EmlServer(('localhost', 1025), None)
+        try:
+            asyncore.loop()
+        except KeyboardInterrupt:
+            pass
+
+    def stop(self):
+        self.foo.stop()
