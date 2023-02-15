@@ -15,3 +15,5 @@ lastname_collection.rephrase_umlauts()
 NameRandomizer = FullNameRandomizer(firstname_Collection.name_cache, lastname_collection.name_cache)
 NameRandomizer.Create_Multiple_random_names(10)
 NameRandomizer.Show_Full_Names_List()
+
+
