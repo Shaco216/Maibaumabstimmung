@@ -3,6 +3,8 @@ from LastNameCreator import *
 from FullNameRandomizer import *
 from EMailServer import *
 from EmailAdressCreator import *
+from PasswordGenerator import *
+from UserCreator import *
 
 firstname_Collection = FirstNameCreator()
 firstname_Collection.search_for_limited_amount_of_names(30)
@@ -22,10 +24,14 @@ NameRandomizer.Create_Multiple_random_names(10)
 #Emailserver = EmlServer()
 #Emailserver.run()
 
-User = EmailAdressCreator(NameRandomizer.Get_Namelist())
-User.set_domain_name("web.de")
-User.create_email_address_name(2,NameRandomizer.Get_Namelist()[3],".")
-User.create_full_email_with_current_domain_from_currentemail()
-print(User.get_current_EMailaddress())
+Emailaccount = EmailAdressCreator(NameRandomizer.Get_Namelist())
+Emailaccount.set_domain_name("web.de")
+Emailaccount.create_email_address_name(2, NameRandomizer.Get_Namelist()[3], ".")
+Emailaccount.create_full_email_with_current_domain_from_currentemail()
+print(Emailaccount.get_current_EMailaddress())
+
+PasswordGen = PasswordGenerator(18)
+PasswordGen.create_password(otherCharactersIncluded=False)
+print(PasswordGen.get_password())
 
 
