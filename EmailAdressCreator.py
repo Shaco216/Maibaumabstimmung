@@ -3,7 +3,7 @@ import string
 
 
 class EmailAdressCreator:
-    _namelist = []
+    _namelist = {}
     _EmailAddressList = []
     _options = {"f.lastname":1,"firstname.lastname":2,"firstname.l":3}
     _currentEmailaddress = ""
@@ -11,40 +11,40 @@ class EmailAdressCreator:
     _domainname = ""
     _EMaillist_with_domainname = []
     def __init__(self,namelist):
-        self.namelist = namelist
+        self._namelist = namelist
 
     def add_name_to_namelist(self, name):
-        self.namelist.append(name)
-    def set_domain_name(self):
-        self.domainname = input("Please enter Domainname: ")
+        self._namelist.append(name)
+    def set_domain_name(self, domain):
+        self._domainname = domain
     def create_full_email_with_current_domain_from_currentemail(self):
-        if self.domainname != "" and self.currentEmailaddress != "":
-            self.currentEmailaddress = self.currentEmailaddress + "@" + self.domainname
+        if self._domainname != "" and self._currentEmailaddress != "":
+            self._currentEmailaddress = self._currentEmailaddress + "@" + self._domainname
     def create_full_email_with_current_domain(self, EMailaddress):
-        if self.domainname != "":
-            self.currentEmailaddress = EMailaddress + "@" + self.domainname
+        if self._domainname != "":
+            self._currentEmailaddress = EMailaddress + "@" + self._domainname
     def show_namelist(self):
-        return self.namelist
+        return self._namelist
 
     def add_EMailAddress_to_EmailAddressList(self, EMailAddress):
-        self.EmailAddressList.append(EMailAddress)
+        self._EmailAddressList.append(EMailAddress)
 
     def add_Current_EMailAddress_to_EmailAddressList(self):
-       self.EmailAddressList.append(self.currentEmailaddress)
+       self._EmailAddressList.append(self._currentEmailaddress)
 
     def get_current_EMailaddress(self):
-        return self.currentEmailaddress
+        return self._currentEmailaddress
 
     def create_email_address_name(self, option, Namecombination, seperator):
-        firstname = Namecombination[1]
-        lastname = Namecombination[2]
+        firstname = Namecombination[0]
+        lastname = Namecombination[1]
         if option == 1:
             EmailAddress = firstname[1]+seperator+lastname
         elif option == 2:
             EmailAddress = firstname+seperator+lastname
         elif option == 3:
             EmailAddress = firstname + seperator + lastname[1]
-        self.currentEmailaddress = EmailAddress
+        self._currentEmailaddress = EmailAddress
 
     def set_randomized_if_ascii_number_puctuation(self):
         ascii_number_puctuation = random.randint(1, 9)
@@ -58,7 +58,7 @@ class EmailAdressCreator:
     def expand_email_address_name(self, EMailAddress):
         randomchar = random.choice(self.set_randomized_if_ascii_number_puctuation())
         EMailAddress = EMailAddress+randomchar
-        self.currentEmailaddress = EMailAddress
+        self._currentEmailaddress = EMailAddress
 
     def exchange_last_character_of_Email_address(self, EMailAddress):
         lenght_to_second_last_digit = 2

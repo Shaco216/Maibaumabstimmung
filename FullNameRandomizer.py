@@ -5,6 +5,7 @@ class FullNameRandomizer:
     _Namelist = {}
     _FirstNameList = []
     _LastNameList = []
+    publicNamelist = {}
 
     def __init__(self,FirstnameList,LastnameList):
         self._FirstNameList = FirstnameList
@@ -20,9 +21,10 @@ class FullNameRandomizer:
     def Create_Multiple_random_names(self, Amount_of_Names):
         for i in range(Amount_of_Names):
             self._Namelist[i] = self.Create_random_Name()
+        self.publicNamelist = self._Namelist
 
     def Show_Full_Names_List(self):
         return print(self._Namelist)
 
     def Get_Namelist(self):
-        self._Namelist
+        return self._Namelist

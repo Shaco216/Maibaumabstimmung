@@ -16,13 +16,16 @@ lastname_collection.rephrase_umlauts()
 
 NameRandomizer = FullNameRandomizer(firstname_Collection.name_cache, lastname_collection.name_cache)
 NameRandomizer.Create_Multiple_random_names(10)
-NameRandomizer.Show_Full_Names_List()
+#NameRandomizer.Show_Full_Names_List()
 
 
-Emailserver = EmlServer()
-Emailserver.run()
+#Emailserver = EmlServer()
+#Emailserver.run()
 
 User = EmailAdressCreator(NameRandomizer.Get_Namelist())
-User.
+User.set_domain_name("web.de")
+User.create_email_address_name(2,NameRandomizer.Get_Namelist()[3],".")
+User.create_full_email_with_current_domain_from_currentemail()
+print(User.get_current_EMailaddress())
 
 
