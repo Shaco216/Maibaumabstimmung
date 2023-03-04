@@ -25,7 +25,7 @@ NameRandomizer.Create_Multiple_random_names(10)
 #Emailserver.run()
 
 Emailaccount = EmailAdressCreator(NameRandomizer.Get_Namelist())
-Emailaccount.set_domain_name("web.de")
+Emailaccount.set_domain_name("newMail.com")
 Emailaccount.create_email_address_name(2, NameRandomizer.Get_Namelist()[3], ".")
 Emailaccount.create_full_email_with_current_domain_from_currentemail()
 print(Emailaccount.get_current_EMailaddress())

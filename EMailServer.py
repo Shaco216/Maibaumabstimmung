@@ -1,9 +1,11 @@
 #https://stackoverflow.com/questions/2690965/a-simple-smtp-server-in-python
-
+#https://docs.python.org/3/library/smtpd.html
+#https://aiosmtpd.readthedocs.io/en/latest/
 from __future__ import print_function
 from datetime import datetime
 import asyncore
-from smtpd import SMTPServer
+#from smtpd import SMTPServer deprecated
+from aiosmtpd import *
 
 class EmlServer(SMTPServer):
     no = 0
