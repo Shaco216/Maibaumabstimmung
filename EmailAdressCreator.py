@@ -64,3 +64,6 @@ class EmailAdressCreator:
         lenght_to_second_last_digit = 2
         emailname = EMailAddress[0:len(EMailAddress)-lenght_to_second_last_digit]
         self.expand_email_address_name(emailname)
+
+    def get_EmailAddresseList(self):
+        return self._EmailAddressList

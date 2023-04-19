@@ -24,9 +24,10 @@ class FirstNameCreator:
             for item in self._searcher.get_current_results():
                 self.name_cache.append(item)
             Pagenumber = Pagenumber + 1
-            time.sleep(3)
+            time.sleep(5)
 
     def search_for_limited_amount_of_names(self,Amount):
+        print("Vornamen werden gesucht...")
         counter = 0
         Pagenumber = 1
         self._searcher = HTML_SearchEngine(MultipleValues=True)
@@ -41,4 +42,4 @@ class FirstNameCreator:
                 self.name_cache.append(item)
                 counter = counter + 1
             Pagenumber = Pagenumber + 1
-            time.sleep(3)
+            time.sleep(5)

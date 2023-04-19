@@ -19,6 +19,7 @@ class FullNameRandomizer:
         return RandomName_list
 
     def Create_Multiple_random_names(self, Amount_of_Names):
+        print("Nachnamen werden zusammengewürfelt...")
         for i in range(Amount_of_Names):
             self._Namelist[i] = self.Create_random_Name()
         self.publicNamelist = self._Namelist
