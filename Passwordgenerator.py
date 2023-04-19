@@ -1,5 +1,4 @@
 import random
-
 class PWGen:
     _alphabet = "abcdefghijklmnopqrstuvwxyz"
     _numbers = "0123456789"
