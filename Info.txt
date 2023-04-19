@@ -1,0 +1,8 @@
+Webdriver for selenium:
+https://sites.google.com/chromium.org/driver/
+
+Packages installed:
+beautifulsoup4
+requests
+selenium
+selenium-wire
