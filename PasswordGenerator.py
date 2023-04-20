@@ -1,32 +1,42 @@
-from random import randrange
+import random
+class PWGen:
+    _alphabet = "abcdefghijklmnopqrstuvwxyz"
+    _numbers = "0123456789"
+    _rest = "!§$%&/()=?{[]}*-+#,.-:_~<>"
+    _pw = ""
+    _allCharacters = False
+    _onlyNumbersAndUpperLowerAlphabet = False
+    _onlyLowerandUpperAlphabet = False
+    _onlyLowerAlphabet = False
+    _passwordpool = ""
 
-class PasswordGenerator:
-    _password = ""
-    _numberOfDigits = 0
-    _upperCases = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    _lowerCases = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
-    _numbers = [0,1,2,3,4,5,6,7,8,9]
-    _otherCharacters = ['!','§','$','%','&','?','/','*','-','+','#',',','.','-',';',':','_']
-    _listOfAllCharacters = [_upperCases,_lowerCases,_numbers,_otherCharacters]
-
-    def __init__(self, digits):
-        self._numberOfDigits = digits
-
-    def create_password(self, otherCharactersIncluded=False):
-        if otherCharactersIncluded == True:
-            numberOfSortOfCharacters = 4
-            for i in range(self._numberOfDigits):
-                chosenNumber = randrange(0,numberOfSortOfCharacters)
-                lengthOfChosenCharacters = len(self._listOfAllCharacters[chosenNumber])
-                randomCharacter = self._listOfAllCharacters[chosenNumber][randrange(0,lengthOfChosenCharacters)]
-                self._password = self._password + str(randomCharacter)
+    def __init__(self, allCharacters = True, onlyNumbersAndUpperLowerAlphabet = False, onlyLowerandUpperAlphabet = False, onlyLowerAlphabet = False):
+        self._allCharacters = allCharacters
+        self._onlyNumbersAndUpperLowerAlphabet = onlyNumbersAndUpperLowerAlphabet
+        self._onlyLowerandUpperAlphabet = onlyLowerandUpperAlphabet
+        self._onlyLowerAlphabet = onlyLowerAlphabet
+        if(self._onlyNumbersAndUpperLowerAlphabet):
+            self._passwordpool = self._passwordpool.replace(self._rest)
+        elif(self._onlyLowerandUpperAlphabet):
+            self._passwordpool = self._passwordpool.replace(self._rest+self._numbers)
+        elif(self._onlyLowerAlphabet):
+            self._passwordpool = self._alphabet
         else:
-            numberOfSortOfCharacters = 3
-            for i in range(self._numberOfDigits):
-                chosenNumber = randrange(0, numberOfSortOfCharacters )
-                lengthOfChosenCharacters = len(self._listOfAllCharacters[chosenNumber])
-                randomCharacter = self._listOfAllCharacters[chosenNumber][randrange(0, lengthOfChosenCharacters)]
-                self._password = self._password + str(randomCharacter)
+            self._passwordpool = self._alphabet + self._alphabet.upper() +self._numbers +self._rest
+
+    def change_passwordpool(self):
+        if(self._onlyNumbersAndUpperLowerAlphabet):
+            self._passwordpool = self._passwordpool.replace(self._rest)
+        elif(self._onlyLowerandUpperAlphabet):
+            self._passwordpool = self._passwordpool.replace(self._rest+self._numbers)
+        elif(self._onlyLowerAlphabet):
+            self._passwordpool = self._alphabet
+
+    def create_pw(self,lengthOfPw):
+        self._pw = ""
+        for i in range(lengthOfPw):
+            #print(len(self._passwordpool))
+            self._pw = self._pw + self._passwordpool[random.randint(0,len(self._passwordpool)-1)]
 
     def get_password(self):
-        return self._password
+        return self._pw
