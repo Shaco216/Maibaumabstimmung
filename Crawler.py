@@ -40,3 +40,4 @@ class Crawler:
             print("Möglicherweise keine oder keine gute Verbindung zur gewünschten Seite.")
         HTML_Code = BeautifulSoup(content, 'html.parser')
         return HTML_Code
+
