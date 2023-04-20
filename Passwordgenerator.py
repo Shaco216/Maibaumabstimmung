@@ -9,7 +9,7 @@ class PWGen:
     _onlyLowerandUpperAlphabet = False
     _onlyLowerAlphabet = False
     _passwordpool = ""
-
+#test
     def __init__(self, allCharacters = True, onlyNumbersAndUpperLowerAlphabet = False, onlyLowerandUpperAlphabet = False, onlyLowerAlphabet = False):
         self._allCharacters = allCharacters
         self._onlyNumbersAndUpperLowerAlphabet = onlyNumbersAndUpperLowerAlphabet
