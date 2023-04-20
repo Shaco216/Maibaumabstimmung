@@ -4,7 +4,7 @@ from FullNameRandomizer import *
 
 from EmailAdressCreator import *
 from CSV_Creator import *
-from PasswordGenerator import *
+from Passwordgenerator import *
 from UserAdministration import *
 
 firstname_Collection = FirstNameCreator()
