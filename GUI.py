@@ -34,7 +34,7 @@ class GUI_Maibaum:
 
         #Labels
         statusLabel = Label(master=self.Fenster, text=self.statustext)
-        statusLabel.place(x=135,y=5,width=150,height=20)
+        statusLabel.place(x=135,y=5,width=250,height=20)
 
         # All Textboxes
         textboxAnzahlVornamen = Text(master=self.Fenster, bg="Yellow")
@@ -47,7 +47,7 @@ class GUI_Maibaum:
 
         textboxAnzahlZeichenPasswort = Text(master=self.Fenster, bg="Yellow")
         textboxAnzahlZeichenPasswort.insert(END,"Anzahl Passwortzeichen")
-        textboxAnzahlZeichenPasswort.place(x=55,y=145, width=150, height=20)
+        textboxAnzahlZeichenPasswort.place(x=55,y=175, width=150, height=20)
 
         textboxDomain = Text(master=self.Fenster, bg="Yellow")
         textboxDomain.insert(END, "Domain z.b. web.de")
@@ -73,8 +73,8 @@ class GUI_Maibaum:
                                         [statusLabel.config(text=self.change_state_to_erzeuge_emails()),
                                          self.create_point_of_emails(textboxDomain.get("1.0",END),optionmenuDesign.grab_current(),textboxSeperator.get("1.0",END)),statusLabel.config(text=self.change_state_to_warte_auf_passwort())])
         buttonEmailsErstellen.place(x=225, y=115, width=150, height=20)
-        buttonPasswortErstellen = Button(master=self.Fenster,bg='DeepSkyBlue2', text="Erstelle Passwort",command=lambda: [statusLabel.config(text=self.change_state_to_erstelle_passwort()),
-                                                                                                                          ])
+        buttonPasswortErstellen = Button(master=self.Fenster,bg='DeepSkyBlue2', text="Erstelle Passwort",command=lambda: [statusLabel.config(text=self.change_state_to_erstelle_passwort())])
+        buttonPasswortErstellen.place(x=55,y=205, width=150, height=20)
 
         # All Optionmenues
         optionmenuDesign = OptionMenu(self.Fenster, self.stringvariable, *self.options)
@@ -96,7 +96,8 @@ class GUI_Maibaum:
         EmailCreator = EmailAdressCreator(self.savepointOfNames[0].Get_Namelist())
         EmailCreator.set_domain_name(domainname)
         lengthOfNamelist = len(self.savepointOfNames[0].Get_Namelist())
-        optionforEmailCreator = optionOfEmailStructure
+        print(optionOfEmailStructure)
+        optionforEmailCreator = int(optionOfEmailStructure)
         seperatorChar = seperatorkey
         for i in range(lengthOfNamelist):
             EmailCreator.create_email_address_name(optionforEmailCreator, self.savepointOfNames[0].Get_Namelist()[i],
@@ -126,10 +127,6 @@ class GUI_Maibaum:
     def change_state_to_erzeuge_emails(self):
         self.statustext="Status: Erzeuge Emails..."
         return self.statustext
-
-
-
-
 
 Gui = GUI_Maibaum()
 
