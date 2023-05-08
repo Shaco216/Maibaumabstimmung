@@ -85,7 +85,7 @@ class GUI_Maibaum:
         buttonEmailsErstellen.place(x=225, y=115, width=150, height=20)
         buttonPasswortErstellen = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Erstelle Passwortgenerator",command=lambda:
                                         [statusLabel.config(text=self.change_state_to_erstelle_passwort()),
-                                         self.create_point_of_pw(textboxAnzahlZeichenPasswort.get("1.0",END)),
+                                         self.create_point_of_pw(int(textboxAnzahlZeichenPasswort.get("1.0",END))),
                                          statusLabel.config(text=self.change_state_to_warte_auf_Email_Passwoerter_Zuordnung())])
         buttonPasswortErstellen.place(x=55,y=205, width=150, height=20)
         buttonZuordnungEMailPasswort = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Ordne Passwörter zu User", command=lambda:
@@ -98,7 +98,7 @@ class GUI_Maibaum:
                                               command=lambda:
                                               [statusLabel.config(
                                                   text=self.change_state_to_erstelle_csv()),
-                                               self.create_point_of_Userzusammenfassung(),
+                                               self.create_csv(),
                                               statusLabel.config(text=self.change_state_to_csv_fertig())])
         buttonErstelleCSV.place(x=55, y=260, width=320, height=20)
         #endregion
@@ -115,7 +115,7 @@ class GUI_Maibaum:
 
         #region filedialog
         #TODO: Check how this works
-        filediolog = filedialog.askdirectory(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+        #filediolog = filedialog.askdirectory(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
 
         #endregion
         self.Fenster.mainloop()
