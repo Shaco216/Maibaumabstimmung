@@ -1,6 +1,7 @@
 from tkinter import Tk
 import tkinter
 from tkinter import *
+from tkinter import filedialog
 from FirstNameCreator import *
 from LastNameCreator import *
 from FullNameRandomizer import *
@@ -20,7 +21,9 @@ class GUI_Maibaum:
     savepointOfNames = []
     savepointOfPW = []
     savepointOfEmail = []
+    savepointOfZusammenfassung = []
     #endregion
+
     Fenster = tkinter.Tk()
     statustext = "Status: Warte auf Vornamen"
 
@@ -80,15 +83,41 @@ class GUI_Maibaum:
                                         textboxSeperator.get("1.0",END)),
                                         statusLabel.config(text=self.change_state_to_warte_auf_passwort())])
         buttonEmailsErstellen.place(x=225, y=115, width=150, height=20)
-        buttonPasswortErstellen = Button(master=self.Fenster,bg='DeepSkyBlue2', text="Erstelle Passwort",command=lambda: [statusLabel.config(text=self.change_state_to_erstelle_passwort())])
+        buttonPasswortErstellen = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Erstelle Passwortgenerator",command=lambda:
+                                        [statusLabel.config(text=self.change_state_to_erstelle_passwort()),
+                                         self.create_point_of_pw(textboxAnzahlZeichenPasswort.get("1.0",END)),
+                                         statusLabel.config(text=self.change_state_to_warte_auf_Email_Passwoerter_Zuordnung())])
         buttonPasswortErstellen.place(x=55,y=205, width=150, height=20)
+        buttonZuordnungEMailPasswort = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Ordne Passwörter zu User", command=lambda:
+                                              [statusLabel.config(text=self.change_state_to_ordne_Email_zu_Passwoerter_zu()),
+                                               self.create_point_of_Userzusammenfassung(),
+                                               statusLabel.config(text=self.change_state_to_warte_auf_csv_erstellung())])
+        buttonZuordnungEMailPasswort.place(x=225,y=205,width=150,height=20)
+
+        buttonErstelleCSV = Button(master=self.Fenster, bg='LawnGreen', text="Erstelle CSV",
+                                              command=lambda:
+                                              [statusLabel.config(
+                                                  text=self.change_state_to_erstelle_csv()),
+                                               self.create_point_of_Userzusammenfassung(),
+                                              statusLabel.config(text=self.change_state_to_csv_fertig())])
+        buttonErstelleCSV.place(x=55, y=260, width=320, height=20)
         #endregion
 
         #region All Optionmenues
+
+        #farbe ändern
+        #https://stackoverflow.com/questions/6178153/how-to-change-menu-background-color-of-tkinters-optionmenu-widget
         optionmenuDesign = OptionMenu(self.Fenster, self.stringvariable, *self.options)
+        optionmenuDesign.config(bg="purple1")
+        optionmenuDesign["menu"].config(bg="purple1")
         optionmenuDesign.place(x=225,y=85,width=150,height=20)
         #endregion
 
+        #region filedialog
+        #TODO: Check how this works
+        filediolog = filedialog.askdirectory(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
+
+        #endregion
         self.Fenster.mainloop()
 
     #region ButtonLogik
@@ -96,12 +125,6 @@ class GUI_Maibaum:
         NameRandomizer = FullNameRandomizer(self.firstname_Collection.name_cache, self.lastname_collection.name_cache)
         NameRandomizer.Create_Multiple_random_names(Amount)
         self.savepointOfNames.append(NameRandomizer)
-
-
-    def create_point_of_pw(self,Amount):
-        pwgen = PWGen()
-        pwgen.create_pw(Amount)
-        self.savepointOfPW.append(pwgen)
 
     def create_point_of_emails(self,domainname,optionOfEmailStructure,seperatorkey):
         EmailCreator = EmailAdressCreator(self.savepointOfNames[0].Get_Namelist())
@@ -121,6 +144,25 @@ class GUI_Maibaum:
             EmailCreator.create_full_email_with_current_domain_from_currentemail()
             EmailCreator.add_Current_EMailAddress_to_EmailAddressList()
         self.savepointOfEmail.append(EmailCreator)
+
+    def create_point_of_pw(self, Amount):
+        pwgen = PWGen()
+        pwgen.set_passwordlength(Amount)
+        self.savepointOfPW.append(pwgen)
+
+    def create_point_of_Userzusammenfassung(self):
+        userzusammenfassung = UserAdministration()
+        for u in self.savepointOfEmail[-1].get_EmailAddresseList(): # -1 holt neuesten eintrag der liste (hintersten eintrag)
+            self.savepointOfPW[-1].create_pw()
+            userzusammenfassung.add_single_key_value_pair(u, self.savepointOfPW[-1].get_password())
+        self.savepointOfZusammenfassung = userzusammenfassung
+
+    def create_csv(self):
+        CSV_Builder = CSV_Creator()
+        CSV_Builder.set_filename("EMailAdressListe")
+        CSV_Builder.set_fieldnames(["Email", "Password"])
+        CSV_Builder.load_source_as_dict(self.savepointOfZusammenfassung[-1].get_user_and_pw())
+        CSV_Builder.build_csv_file()
     #endregion
 
     #region Statusänderungen
@@ -128,21 +170,37 @@ class GUI_Maibaum:
         self.statustext="Status: Suche Namen..."
         return self.statustext
     def change_state_to_warte_auf_namenserstellung(self):
-        self.statustext="Status: Warte auf Namenserstellung"
+        self.statustext="Status: Warte auf Namenserstellung..."
         return self.statustext
     def change_state_to_erstelle_namensliste(self):
         self.statustext="Status: Erstelle Namensliste..."
         return self.statustext
-    def change_state_to_warte_auf_passwort(self):
-        self.statustext="Status: Warte auf Passworterstellung"
-        return self.statustext
-    def change_state_to_erstelle_passwort(self):
-        self.statustext="Status: Erstelle Passwort..."
     def change_state_to_warte_auf_emailadressen(self):
-        self.statustext="Status: Warte auf Emailerstellung"
+        self.statustext="Status: Warte auf Emailerstellung..."
         return self.statustext
     def change_state_to_erzeuge_emails(self):
         self.statustext="Status: Erzeuge Emails..."
+        return self.statustext
+    def change_state_to_warte_auf_passwort(self):
+        self.statustext="Status: Warte auf Passwortgeneratorerstellung..."
+        return self.statustext
+    def change_state_to_erstelle_passwort(self):
+        self.statustext="Status: Erstelle Passwortgenerator..."
+        return self.statustext
+    def change_state_to_warte_auf_Email_Passwoerter_Zuordnung(self):
+        self.statustext="Status: Warte auf Zuordnung..."
+        return self.statustext
+    def change_state_to_ordne_Email_zu_Passwoerter_zu(self):
+        self.statustext="Status: Ordne Emails zu Passwoerter zu..."
+        return self.statustext
+    def change_state_to_warte_auf_csv_erstellung(self):
+        self.statustext="Status: Warte auf CSV-Erstellung..."
+        return self.statustext
+    def change_state_to_erstelle_csv(self):
+        self.statustext="Status: Erstelle CSV..."
+        return self.statustext
+    def change_state_to_csv_fertig(self):
+        self.statustext="Status: CSV erstellt!"
         return self.statustext
     #endregion
 

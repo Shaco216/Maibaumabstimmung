@@ -9,6 +9,7 @@ class PWGen:
     _onlyLowerandUpperAlphabet = False
     _onlyLowerAlphabet = False
     _passwordpool = ""
+    _passwordlength = 0
 
     def __init__(self, allCharacters = True, onlyNumbersAndUpperLowerAlphabet = False, onlyLowerandUpperAlphabet = False, onlyLowerAlphabet = False):
         self._allCharacters = allCharacters
@@ -32,11 +33,16 @@ class PWGen:
         elif(self._onlyLowerAlphabet):
             self._passwordpool = self._alphabet
 
-    def create_pw(self,lengthOfPw):
+    def set_passwordlength(self, Amount):
+        self._passwordlength = Amount
+
+    def create_pw(self):
         self._pw = ""
-        for i in range(lengthOfPw):
+        for i in range(self._passwordlength):
             #print(len(self._passwordpool))
             self._pw = self._pw + self._passwordpool[random.randint(0,len(self._passwordpool)-1)]
 
     def get_password(self):
         return self._pw
+
+

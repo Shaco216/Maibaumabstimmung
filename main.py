@@ -46,9 +46,10 @@ for i in range(lengthOfNamelist):
 pwgen = PWGen()
 useradmin = UserAdministration()
 pwlen = int(input("Bitte Passwortlaenge eingeben: "))
+pwgen.set_passwordlength(pwlen)
 print("Passwörter werden ausgedacht...")
 for u in EmailCreator.get_EmailAddresseList():
-    pwgen.create_pw(pwlen)
+    pwgen.create_pw()
     useradmin.add_single_key_value_pair(u,pwgen.get_password())
 
 CSV_Builder = CSV_Creator()
