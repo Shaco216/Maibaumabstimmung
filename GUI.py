@@ -12,18 +12,19 @@ from UserAdministration import *
 
 
 class GUI_Maibaum:
+
     firstname_Collection = FirstNameCreator()
     lastname_collection = LastNameCreator()
 
-    #Savepoints
+    #region Savepoints
     savepointOfNames = []
     savepointOfPW = []
     savepointOfEmail = []
-
+    #endregion
     Fenster = tkinter.Tk()
     statustext = "Status: Warte auf Vornamen"
 
-    #TODO: https://stackoverflow.com/questions/45441885/how-can-i-create-a-dropdown-menu-from-a-list-in-tkinter
+    #https://stackoverflow.com/questions/45441885/how-can-i-create-a-dropdown-menu-from-a-list-in-tkinter
     options = ["v.nachname","vorname.nachname","vorname.n"]
     stringvariable = StringVar(Fenster)
     stringvariable.set(options[0])
@@ -32,11 +33,12 @@ class GUI_Maibaum:
         self.Fenster.title('Maibaumabstimmung')
         self.Fenster.geometry('450x320')
 
-        #Labels
+        #region All Labels
         statusLabel = Label(master=self.Fenster, text=self.statustext)
         statusLabel.place(x=85,y=5,width=250,height=20)
+        #endregion
 
-        # All Textboxes
+        #region All Textboxes
         textboxAnzahlVornamen = Text(master=self.Fenster, bg="Yellow")
         textboxAnzahlVornamen.insert(END, "Anzahl Vornamen")
         textboxAnzahlVornamen.place(x=55, y=25, width=150, height=20)
@@ -56,8 +58,9 @@ class GUI_Maibaum:
         textboxSeperator = Text(master=self.Fenster, bg="Yellow")
         textboxSeperator.insert(END, "Seperator auser ;")
         textboxSeperator.place(x=225,y=55,width=150,height=20)
+        #endregion
 
-        # All Buttons
+        #region All Buttons
         buttonNamenSuchen = Button(master=self.Fenster, bg='DeepSkyBlue2', text='Suche Namen', command=lambda: [statusLabel.config(text=self.change_state_to_suche_namen()),
             self.firstname_Collection.search_for_limited_amount_of_names(int(textboxAnzahlVornamen.get("1.0", END))),
             self.lastname_collection.get_all_Last_Names(),
@@ -79,22 +82,26 @@ class GUI_Maibaum:
         buttonEmailsErstellen.place(x=225, y=115, width=150, height=20)
         buttonPasswortErstellen = Button(master=self.Fenster,bg='DeepSkyBlue2', text="Erstelle Passwort",command=lambda: [statusLabel.config(text=self.change_state_to_erstelle_passwort())])
         buttonPasswortErstellen.place(x=55,y=205, width=150, height=20)
+        #endregion
 
-        # All Optionmenues
+        #region All Optionmenues
         optionmenuDesign = OptionMenu(self.Fenster, self.stringvariable, *self.options)
         optionmenuDesign.place(x=225,y=85,width=150,height=20)
+        #endregion
 
         self.Fenster.mainloop()
 
-    #ButtonLogik
+    #region ButtonLogik
     def create_point_of_names(self,Amount):
         NameRandomizer = FullNameRandomizer(self.firstname_Collection.name_cache, self.lastname_collection.name_cache)
         NameRandomizer.Create_Multiple_random_names(Amount)
         self.savepointOfNames.append(NameRandomizer)
-        #print(NameRandomizer.Get_Namelist())
+
 
     def create_point_of_pw(self,Amount):
         pwgen = PWGen()
+        pwgen.create_pw(Amount)
+        self.savepointOfPW.append(pwgen)
 
     def create_point_of_emails(self,domainname,optionOfEmailStructure,seperatorkey):
         EmailCreator = EmailAdressCreator(self.savepointOfNames[0].Get_Namelist())
@@ -114,8 +121,9 @@ class GUI_Maibaum:
             EmailCreator.create_full_email_with_current_domain_from_currentemail()
             EmailCreator.add_Current_EMailAddress_to_EmailAddressList()
         self.savepointOfEmail.append(EmailCreator)
+    #endregion
 
-    #Statusänderungen
+    #region Statusänderungen
     def change_state_to_suche_namen(self):
         self.statustext="Status: Suche Namen..."
         return self.statustext
@@ -136,6 +144,7 @@ class GUI_Maibaum:
     def change_state_to_erzeuge_emails(self):
         self.statustext="Status: Erzeuge Emails..."
         return self.statustext
+    #endregion
 
 Gui = GUI_Maibaum()
 
