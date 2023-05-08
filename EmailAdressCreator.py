@@ -67,3 +67,9 @@ class EmailAdressCreator:
 
     def get_EmailAddresseList(self):
         return self._EmailAddressList
+
+    def show_EmailAddresseList(self):
+        print(self._EmailAddressList)
+
+    def set_current_Emailaddresse(self,Emailaddresse):
+        self._currentEmailaddress = Emailaddresse

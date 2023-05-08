@@ -124,13 +124,13 @@ class GUI_Maibaum:
     def create_point_of_names(self,Amount):
         NameRandomizer = FullNameRandomizer(self.firstname_Collection.name_cache, self.lastname_collection.name_cache)
         NameRandomizer.Create_Multiple_random_names(Amount)
+        NameRandomizer.Show_Full_Names_List()
         self.savepointOfNames.append(NameRandomizer)
 
     def create_point_of_emails(self,domainname,optionOfEmailStructure,seperatorkey):
         EmailCreator = EmailAdressCreator(self.savepointOfNames[0].Get_Namelist())
         EmailCreator.set_domain_name(domainname)
         lengthOfNamelist = len(self.savepointOfNames[0].Get_Namelist())
-        print("domaene: " + domainname+ " optionStructure: " + optionOfEmailStructure + " seperator: "+ seperatorkey)
         if optionOfEmailStructure == "v.nachname":
             optionforEmailCreator = 1
         if optionOfEmailStructure == "vorname.nachname":
@@ -141,8 +141,13 @@ class GUI_Maibaum:
         for i in range(lengthOfNamelist):
             EmailCreator.create_email_address_name(optionforEmailCreator, self.savepointOfNames[0].Get_Namelist()[i],
                                                    seperatorChar)
+            #region löschung zusätzliches_Zeichen \n - entsteht durch zusätzliche Containerisierung von objekt in Liste
+            EmailCreator.set_current_Emailaddresse(str(EmailCreator.get_current_EMailaddress()).replace('\n',''))
+            #endregion
+
             EmailCreator.create_full_email_with_current_domain_from_currentemail()
             EmailCreator.add_Current_EMailAddress_to_EmailAddressList()
+        EmailCreator.show_EmailAddresseList()
         self.savepointOfEmail.append(EmailCreator)
 
     def create_point_of_pw(self, Amount):
@@ -155,7 +160,7 @@ class GUI_Maibaum:
         for u in self.savepointOfEmail[-1].get_EmailAddresseList(): # -1 holt neuesten eintrag der liste (hintersten eintrag)
             self.savepointOfPW[-1].create_pw()
             userzusammenfassung.add_single_key_value_pair(u, self.savepointOfPW[-1].get_password())
-        self.savepointOfZusammenfassung = userzusammenfassung
+        self.savepointOfZusammenfassung.append(userzusammenfassung)
 
     def create_csv(self):
         CSV_Builder = CSV_Creator()
