@@ -34,7 +34,7 @@ class GUI_Maibaum:
 
         #Labels
         statusLabel = Label(master=self.Fenster, text=self.statustext)
-        statusLabel.place(x=135,y=5,width=250,height=20)
+        statusLabel.place(x=85,y=5,width=250,height=20)
 
         # All Textboxes
         textboxAnzahlVornamen = Text(master=self.Fenster, bg="Yellow")
@@ -65,13 +65,17 @@ class GUI_Maibaum:
         buttonNamenSuchen.place(x=55, y=55, width=150, height=20)
 
         buttonNamenErstellen = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Erstelle Namen",
-                                      command=lambda: [statusLabel.config(text=self.change_state_to_erstelle_namensliste()),self.create_point_of_names(int(textboxAnzahlNamen.get("1.0", END))),
+                                      command=lambda: [statusLabel.config(text=self.change_state_to_erstelle_namensliste()),
+                                                       self.create_point_of_names(int(textboxAnzahlNamen.get("1.0", END))),
                                                        statusLabel.config(text=self.change_state_to_warte_auf_emailadressen())])
         buttonNamenErstellen.place(x=55, y=115, width=150, height=20)
 
         buttonEmailsErstellen = Button(master=self.Fenster, bg="DeepSkyBlue2", text="Erstelle Emails",command=lambda:
                                         [statusLabel.config(text=self.change_state_to_erzeuge_emails()),
-                                         self.create_point_of_emails(textboxDomain.get("1.0",END),optionmenuDesign.grab_current(),textboxSeperator.get("1.0",END)),statusLabel.config(text=self.change_state_to_warte_auf_passwort())])
+                                         self.create_point_of_emails(textboxDomain.get("1.0",END),
+                                        self.stringvariable.get(),
+                                        textboxSeperator.get("1.0",END)),
+                                        statusLabel.config(text=self.change_state_to_warte_auf_passwort())])
         buttonEmailsErstellen.place(x=225, y=115, width=150, height=20)
         buttonPasswortErstellen = Button(master=self.Fenster,bg='DeepSkyBlue2', text="Erstelle Passwort",command=lambda: [statusLabel.config(text=self.change_state_to_erstelle_passwort())])
         buttonPasswortErstellen.place(x=55,y=205, width=150, height=20)
@@ -96,8 +100,13 @@ class GUI_Maibaum:
         EmailCreator = EmailAdressCreator(self.savepointOfNames[0].Get_Namelist())
         EmailCreator.set_domain_name(domainname)
         lengthOfNamelist = len(self.savepointOfNames[0].Get_Namelist())
-        print(optionOfEmailStructure)
-        optionforEmailCreator = int(optionOfEmailStructure)
+        print("domaene: " + domainname+ " optionStructure: " + optionOfEmailStructure + " seperator: "+ seperatorkey)
+        if optionOfEmailStructure == "v.nachname":
+            optionforEmailCreator = 1
+        if optionOfEmailStructure == "vorname.nachname":
+            optionforEmailCreator = 2
+        if optionOfEmailStructure == "vorname.n":
+            optionforEmailCreator = 3
         seperatorChar = seperatorkey
         for i in range(lengthOfNamelist):
             EmailCreator.create_email_address_name(optionforEmailCreator, self.savepointOfNames[0].Get_Namelist()[i],
