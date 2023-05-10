@@ -40,11 +40,11 @@ class GUI_Maibaum:
     def __init__(self):
         self.Fenster.title('Maibaumabstimmung')
         self.Fenster.geometry('450x320')
+        self.Fenster.iconbitmap('Pinguinware.ico')
 
         #region All Labels
         statusLabel = Label(master=self.Fenster, text=self.statustext)
         statusLabel.place(x=85,y=5,width=250,height=20)
-        #statusLabel = Label(master=self.Fenster, text=self.statustext)
 
         pathLabel = Label(master=self.Fenster, text=self.pathtext)
         pathLabel.place(x=85, y=230, width=250, height=20)
