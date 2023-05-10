@@ -101,6 +101,8 @@ class GUI_Maibaum:
                                                self.create_csv(),
                                               statusLabel.config(text=self.change_state_to_csv_fertig())])
         buttonErstelleCSV.place(x=55, y=260, width=320, height=20)
+        buttonChooseSaveDir = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Speicherort festlegen", command=lambda: self.openDir())
+        buttonChooseSaveDir.place(x=225,y=175,width=150,height=20)
         #endregion
 
         #region All Optionmenues
@@ -113,11 +115,6 @@ class GUI_Maibaum:
         optionmenuDesign.place(x=225,y=85,width=150,height=20)
         #endregion
 
-        #region filedialog
-        #TODO: Check how this works
-        #filediolog = filedialog.askdirectory(initialdir = "/",title = "Select file",filetypes = (("jpeg files","*.jpg"),("all files","*.*")))
-
-        #endregion
         self.Fenster.mainloop()
 
     #region ButtonLogik
@@ -164,10 +161,18 @@ class GUI_Maibaum:
 
     def create_csv(self):
         CSV_Builder = CSV_Creator()
-        CSV_Builder.set_filename("EMailAdressListe")
+        if(self.Fenster.directory != None and self.Fenster.directory != ""):
+            Path = self.Fenster.directory + "/"
+        else:
+            Path = ""
+        CSV_Builder.set_filename(Path+"EMailAdressListe")
         CSV_Builder.set_fieldnames(["Email", "Password"])
         CSV_Builder.load_source_as_dict(self.savepointOfZusammenfassung[-1].get_user_and_pw())
         CSV_Builder.build_csv_file()
+
+    def openDir(self):
+        self.Fenster.directory = filedialog.askdirectory(initialdir="/", title="Select directory")
+
     #endregion
 
     #region Statusänderungen
