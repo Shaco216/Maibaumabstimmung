@@ -26,11 +26,16 @@ class GUI_Maibaum:
 
     Fenster = tkinter.Tk()
     statustext = "Status: Warte auf Vornamen"
+    pathtext = "Pfad: "
 
     #https://stackoverflow.com/questions/45441885/how-can-i-create-a-dropdown-menu-from-a-list-in-tkinter
     options = ["v.nachname","vorname.nachname","vorname.n"]
-    stringvariable = StringVar(Fenster)
-    stringvariable.set(options[0])
+
+    #region stringvariablen
+    #statustext
+    stringvariableStatus = StringVar(Fenster)
+    stringvariableStatus.set(options[0])
+    #endregion
 
     def __init__(self):
         self.Fenster.title('Maibaumabstimmung')
@@ -39,6 +44,10 @@ class GUI_Maibaum:
         #region All Labels
         statusLabel = Label(master=self.Fenster, text=self.statustext)
         statusLabel.place(x=85,y=5,width=250,height=20)
+        #statusLabel = Label(master=self.Fenster, text=self.statustext)
+
+        pathLabel = Label(master=self.Fenster, text=self.pathtext)
+        pathLabel.place(x=85, y=230, width=250, height=20)
         #endregion
 
         #region All Textboxes
@@ -79,8 +88,8 @@ class GUI_Maibaum:
         buttonEmailsErstellen = Button(master=self.Fenster, bg="DeepSkyBlue2", text="Erstelle Emails",command=lambda:
                                         [statusLabel.config(text=self.change_state_to_erzeuge_emails()),
                                          self.create_point_of_emails(textboxDomain.get("1.0",END),
-                                        self.stringvariable.get(),
-                                        textboxSeperator.get("1.0",END)),
+                                                                     self.stringvariableStatus.get(),
+                                                                     textboxSeperator.get("1.0",END)),
                                         statusLabel.config(text=self.change_state_to_warte_auf_passwort())])
         buttonEmailsErstellen.place(x=225, y=115, width=150, height=20)
         buttonPasswortErstellen = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Erstelle Passwortgenerator",command=lambda:
@@ -101,7 +110,8 @@ class GUI_Maibaum:
                                                self.create_csv(),
                                               statusLabel.config(text=self.change_state_to_csv_fertig())])
         buttonErstelleCSV.place(x=55, y=260, width=320, height=20)
-        buttonChooseSaveDir = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Speicherort festlegen", command=lambda: self.openDir())
+        buttonChooseSaveDir = Button(master=self.Fenster, bg='DeepSkyBlue2', text="Speicherort festlegen", command=lambda: [self.openDir(),
+                                    pathLabel.config(text=self.change_path_state())])
         buttonChooseSaveDir.place(x=225,y=175,width=150,height=20)
         #endregion
 
@@ -109,7 +119,7 @@ class GUI_Maibaum:
 
         #farbe ändern
         #https://stackoverflow.com/questions/6178153/how-to-change-menu-background-color-of-tkinters-optionmenu-widget
-        optionmenuDesign = OptionMenu(self.Fenster, self.stringvariable, *self.options)
+        optionmenuDesign = OptionMenu(self.Fenster, self.stringvariableStatus, *self.options)
         optionmenuDesign.config(bg="purple1")
         optionmenuDesign["menu"].config(bg="purple1")
         optionmenuDesign.place(x=225,y=85,width=150,height=20)
@@ -212,6 +222,13 @@ class GUI_Maibaum:
     def change_state_to_csv_fertig(self):
         self.statustext="Status: CSV erstellt!"
         return self.statustext
+    #endregion
+
+    #region path_state
+    def change_path_state(self):
+        self.pathtext = "Pfad: "
+        self.pathtext = self.pathtext + self.Fenster.directory
+        return self.pathtext
     #endregion
 
 Gui = GUI_Maibaum()
