@@ -39,11 +39,11 @@ class EmailAdressCreator:
         firstname = Namecombination[0]
         lastname = Namecombination[1]
         if option == 1:
-            EmailAddress = firstname[1]+seperator+lastname
+            EmailAddress = firstname[0]+seperator+lastname
         elif option == 2:
             EmailAddress = firstname+seperator+lastname
         elif option == 3:
-            EmailAddress = firstname + seperator + lastname[1]
+            EmailAddress = firstname + seperator + lastname[0]
         self._currentEmailaddress = EmailAddress
 
     def set_randomized_if_ascii_number_puctuation(self):
