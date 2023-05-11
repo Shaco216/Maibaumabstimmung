@@ -1,5 +1,6 @@
 from tkinter import Tk
 import tkinter
+
 from tkinter import *
 from tkinter import filedialog
 from FirstNameCreator import *
@@ -40,7 +41,12 @@ class GUI_Maibaum:
     def __init__(self):
         self.Fenster.title('Maibaumabstimmung')
         self.Fenster.geometry('450x320')
-        self.Fenster.iconbitmap('Pinguinware.ico')
+
+        #v1:
+        #self.Fenster.iconbitmap('Pinguinware.ico')
+        #v2:
+        #img = PhotoImage(file='Pinguinware.ico')
+        #self.Fenster.tk.call('wm', 'iconphoto', self.Fenster._w, img)
 
         #region All Labels
         statusLabel = Label(master=self.Fenster, text=self.statustext)
