@@ -14,7 +14,8 @@ from UserAdministration import *
 
 
 class GUI_Maibaum:
-
+    _title = 'Ben <3 Tatjana'
+    _title_state = 1
     firstname_Collection = FirstNameCreator()
     lastname_collection = LastNameCreator()
 
@@ -39,7 +40,7 @@ class GUI_Maibaum:
     #endregion
 
     def __init__(self):
-        self.Fenster.title('Maibaumabstimmung')
+        self.Fenster.title(self._title)
         self.Fenster.geometry('450x320')
 
         #v1:
@@ -139,6 +140,13 @@ class GUI_Maibaum:
         self.Fenster.mainloop()
 
     #region ButtonLogik
+    def change_title(self):
+        if self._title_state == 0:
+            self._title = 'Ben <3 Tatjana'
+            self._title_state = 1
+        elif self._title_state == 1:
+            self._title = 'Tatjana <3 Ben'
+            self._title_state = 0
     def create_point_of_names(self,Amount):
         NameRandomizer = FullNameRandomizer(self.firstname_Collection.name_cache, self.lastname_collection.name_cache)
         NameRandomizer.Create_Multiple_random_names(Amount)

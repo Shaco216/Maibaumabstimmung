@@ -6,3 +6,6 @@ beautifulsoup4
 requests
 selenium
 selenium-wire
+
+Sonstige Vorraussetzung für Webdriver:
+Chrome installieren
