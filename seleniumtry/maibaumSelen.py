@@ -5,17 +5,17 @@ import csv
 from tkinter import filedialog
 from voter import voteuser
 
-print('CSV bitte tabulatorgetrennt und columns in reihenfolge exakt so benannt:')
-print('emailadress\tpassword\tfirstName\tlastName')
+print('CSV bitte kommagetrennt und columns in reihenfolge exakt so benannt:')
+print('emailadress,password,firstName,lastName')
 
 voters = []
 print("Bitte CSV auswählen:")
-file = filedialog.askopenfilename(filetypes='csv')
-with open(file,'r') as f:
-    reader = f.read()
+file = filedialog.askopenfilename(title = "Select CSV-File",filetypes = (("CSV Files","*.csv"),))
+with open(file,'r') as csvfile:
+    reader = csv.reader(csvfile, delimiter=',')
     for line in reader:
-        splitline = line.split()
-        voterino = voteuser(emailaddress=splitline[0],password=splitline[1],vorname=splitline[2],nachname=splitline[3])
+        voterino = voteuser(emailaddress=str(line[0]),password=str(line[1]),vorname=str(line[2]),nachname=str(line[3]))
+        print(voterino)
         voters.append(voterino)
 
 clicksleep = 1
@@ -84,6 +84,15 @@ if regErledigtBool:
         linksAngeklickt = input("Wurden links angeklickt? (y/n) ").lower() == 'y'
     if linksAngeklickt:
         for voteri in voters:
+            driver.get(f'https://www.schlossbrauerei-unterbaar.de/maibaum-aktion/registrierung')
+            anmeldung = driver.find_element(By.XPATH, value="//div[@id='c600'")
+            anmeldung_form = anmeldung.find_element(By.XPATH, value="//form[]")
+            anmeldung_input_name = anmeldung_form.find_element(By.XPATH, value="//input[@name='user']")
+            anmeldung_input_name.click()
+            anmeldung_input_name.send_keys(voteri.emailaddress)
+            anmeldung_input_pass = anmeldung_form.find_element(By.XPATH, value="//input[@name='pass']")
+            anmeldung_input_pass.click()
+            anmeldung_input_pass.send_keys(voteri.password)
             driver.get(f'https://www.schlossbrauerei-unterbaar.de/maibaum-aktion/voting/orte-unter-400-einwohner')
             time.sleep(10)
             votingElements = driver.find_element(By.XPATH, value="//div[@class='votingelement']")

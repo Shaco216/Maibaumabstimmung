@@ -5,7 +5,7 @@ class voteuser:
     vorname = ""
     nachname = ""
     def __init__(self, emailaddress, password, vorname, nachname):
-        self._emailaddress = emailaddress
-        self._password = password
-        self._vorname = vorname
-        self._nachname = nachname
+        self.emailaddress = emailaddress
+        self.password = password
+        self.vorname = vorname
+        self.nachname = nachname
