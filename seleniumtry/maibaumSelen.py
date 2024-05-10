@@ -70,7 +70,6 @@ for voter in voters:
     time.sleep(clicksleep)
 linksAngeklickt = False
 while linksAngeklickt is False:
-
     linksAngeklickt = input("Wurden links angeklickt? (y/n) ").lower() == 'y'
 if linksAngeklickt:
     for voter in voters:
