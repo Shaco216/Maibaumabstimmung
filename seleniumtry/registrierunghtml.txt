@@ -1,0 +1,983 @@
+
+<html dir="ltr" lang="de-DE"><head>
+
+<meta charset="utf-8">
+<!--
+	Riegg & Partner intercorp. GmbH - Ihre TYPO3 Agentur aus Oberfranken
+
+	This website is powered by TYPO3 - inspiring people to share!
+	TYPO3 is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.
+	TYPO3 is copyright 1998-2024 of Kasper Skaarhoj. Extensions are copyright of their respective owners.
+	Information and contribution at https://typo3.org/
+-->
+
+
+<link rel="icon" href="/typo3conf/ext/unterbaar_theme/Resources/Public/Images/favicon-schlossbrauerei-unterbaar.ico" type="image/vnd.microsoft.icon">
+<title>Login &amp; Registrierung: Schlossbrauerei Unterbaar</title>
+<meta http-equiv="x-ua-compatible" content="IE=edge">
+<meta name="generator" content="TYPO3 CMS">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="INDEX,FOLLOW">
+<meta property="og:title" content="Login &amp; Registrierung">
+<meta property="og:image" content="https://www.schlossbrauerei-unterbaar.de/fileadmin/user_upload/background-maibaum.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="apple-mobile-web-app-capable" content="no">
+
+
+<link rel="stylesheet" href="/typo3temp/assets/compressed/merged-9ff34dba64c111118263c650d6f790fb.css?1702893682" media="all">
+
+
+
+
+<script src="/typo3conf/ext/unterbaar_theme/Resources/Public/Contrib/jquery/jquery-3.6.1.min.js?1667211422"></script>
+
+
+
+<link rel="canonical" href="https://www.schlossbrauerei-unterbaar.de/maibaum-aktion/registrierung">
+
+</head>
+<body class="page-92 layout-Default_leftNav css-default lang-de modal-open" data-aos-easing="ease" data-aos-duration="1000" data-aos-delay="0" style="overflow: hidden; padding-right: 15px;">
+
+
+
+
+
+
+
+
+<div class="page" id="thePage" style="background-image: url(/fileadmin/user_upload/background-maibaum.jpg)">
+
+
+<header>
+
+    <nav class="navHeaderWrapper">
+        <div class="container d-none d-lg-flex justify-content-end">
+            <ul class="navHeader meta list-inline text-end d-none d-lg-block"><li class="list-inline-item"><a href="https://www.facebook.com/SchlossbrauereiUnterbaarer/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li><li class="list-inline-item"><a href="/kontakt">Kontakt</a></li><li class="list-inline-item"><a href="/impressum">Impressum</a></li><li class="list-inline-item"><a href="/datenschutz">Datenschutz</a></li></ul>
+
+        </div>
+    </nav>
+
+    <nav id="navMainWrapper">
+        <div id="mainheader" class="container-lg">
+            <div class="row">
+                <div class="col-12 col-lg-2">
+                    <a href="/">
+                        <img class="logo" title="Schlossbrauerei Unterbaarer" alt="Schlossbrauerei Unterbaarer" src="/typo3conf/ext/unterbaar_theme/Resources/Public/Images/Logos/Logo_2023_Etikett_klein.png" width="600" height="586">
+                    </a>
+                    <div class="toggle-btn d-block d-lg-none"><i class="fa-regular fa-bars"></i></div>
+                </div>
+                <div class="col smart-menu">
+                    <ul id="main-menu" class="sm sm-clean" data-smartmenus-id="17153239982615366"><li><a href="/brauerei/tradition" class="has-submenu" id="menuLink61" aria-haspopup="true" aria-controls="sm-17153239982615366-1" aria-expanded="false">Brauerei<span class="sub-arrow"></span></a><ul id="sm-17153239982615366-1" role="group" aria-hidden="true" aria-labelledby="menuLink61" aria-expanded="false"><li><a href="/brauerei/tradition" class="" id="menuLink71">Tradition</a></li><li><a href="/brauerei/qualitaet" class="" id="menuLink70">Qualität</a></li><li><a href="/brauerei/region" class="" id="menuLink69">Region</a></li></ul></li><li><a href="/feste/das-brauereifest" class="has-submenu" id="menuLink62" aria-haspopup="true" aria-controls="sm-17153239982615366-2" aria-expanded="false">Feste<span class="sub-arrow"></span></a><ul id="sm-17153239982615366-2" role="group" aria-hidden="true" aria-labelledby="menuLink62" aria-expanded="false"><li><a href="/feste/das-brauereifest" class="" id="menuLink81">Das Brauereifest</a></li><li><a href="/feste/bildergalerie-2022-1" class="" id="menuLink124">Bildergalerie 2023</a></li><li><a href="/feste/bildergalerie-2019-die-gewinner-1" class="" id="menuLink125">Bildergalerie 2023 - Die Gewinner</a></li><li><a href="/feste/bildergalerie-2022" class="" id="menuLink118">Bildergalerie 2022</a></li><li><a href="/feste/bildergalerie-2019" class="" id="menuLink80">Bildergalerie 2019</a></li><li><a href="/feste/bildergalerie-2019-die-gewinner" class="" id="menuLink79">Bildergalerie 2019 - Die Gewinner</a></li><li><a href="/feste/bildergalerie-2018" class="" id="menuLink78">Bildergalerie 2018</a></li><li><a href="/feste/bildergalerie-2018-die-gewinner" class="" id="menuLink77">Bildergalerie 2018 - Die Gewinner</a></li><li><a href="/feste/bildergalerie-2017" class="" id="menuLink76">Bildergalerie 2017</a></li><li><a href="/feste/bildergalerie-2017-die-gewinner" class="" id="menuLink75">Bildergalerie 2017 - Die Gewinner</a></li><li><a href="/feste/bildergalerie-2016" class="" id="menuLink74">Bildergalerie 2016</a></li><li><a href="/feste/bildergalerie-2016-die-gewinner" class="" id="menuLink73">Bildergalerie 2016 - Die Gewinner</a></li></ul></li><li class="highlighted"><a href="/maibaum-aktion" class="highlighted has-submenu" id="sm-17153239982615366-3" aria-haspopup="true" aria-controls="sm-17153239982615366-4" aria-expanded="false">Maibaum-Aktion<span class="sub-arrow"></span></a><ul id="sm-17153239982615366-4" role="group" aria-hidden="true" aria-labelledby="sm-17153239982615366-3" aria-expanded="false"><li><a href="/maibaum-aktion/infos-teilnahmebedingungen" class="" id="menuLink99">Infos &amp; Bedingungen</a></li><li><a href="/maibaum-aktion/infos-teilnahmebedingungen/landkreise" class="" id="menuLink100">Landkreise und Orte</a></li><li><a href="/maibaum-aktion/infos-teilnahmebedingungen/maibaumfreunde" class="" id="menuLink106">Maibaumfreunde ND-SOB mit Lechgebiet e.V</a></li><li><a href="/maibaum-aktion/verlosung" class="" id="menuLink121">Verlosung</a></li><li class="active"><a href="/maibaum-aktion/voting" class="highlighted">Voting</a></li><li><a href="/maibaum-aktion/gewinner" class="has-submenu" id="menuLink107" aria-haspopup="true" aria-controls="sm-17153239982615366-5" aria-expanded="false">Gewinner der Jahrgänge<span class="sub-arrow"></span></a><ul id="sm-17153239982615366-5" role="group" aria-hidden="true" aria-labelledby="menuLink107" aria-expanded="false"><li><a href="/maibaum-aktion/gewinner/gewinner-2023" class="" id="menuLink126">Gewinner 2023</a></li><li><a href="/maibaum-aktion/gewinner/gewinner-2019" class="" id="menuLink108">Gewinner 2019</a></li><li><a href="/maibaum-aktion/gewinner/gewinner-2018" class="" id="menuLink109">Gewinner 2018</a></li><li><a href="/maibaum-aktion/gewinner/gewinner-2017" class="" id="menuLink110">Gewinner 2017</a></li><li><a href="/maibaum-aktion/gewinner/gewinner-2016" class="" id="menuLink111">Gewinner 2016</a></li></ul></li></ul></li><li><a href="/biere" class="" id="menuLink64">Biere</a></li><li><a href="/cubana" class="" id="menuLink65">Cubana</a></li><li><a href="/unser-service/liefergebiet" class="has-submenu" id="menuLink66" aria-haspopup="true" aria-controls="sm-17153239982615366-6" aria-expanded="false">Unser Service<span class="sub-arrow"></span></a><ul id="sm-17153239982615366-6" role="group" aria-hidden="true" aria-labelledby="menuLink66" aria-expanded="false"><li><a href="/unser-service/liefergebiet" class="" id="menuLink84">Liefergebiet</a></li><li><a href="/unser-service/event-service" class="" id="menuLink83">Event-Service</a></li><li><a href="/unser-service/ansprechpartner" class="" id="menuLink82">Ansprechpartner</a></li></ul></li><li><a href="/kampagne" class="" id="menuLink67">Kampagne</a></li><li><a href="https://www.unterbaarer-fanshop.de/" target="_blank" class="" id="menuLink68">Fan-Shop</a></li></ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+</header>
+
+
+
+    <main id="content">
+
+        <div class="container">
+            <div class="row m-0">
+                <!--TYPO3SEARCH_begin-->
+                <div class="col-12 col-lg-3">
+
+
+
+    <div class="content1 container">
+
+
+
+            <div id="c646" class="frame frame-default frame-type-shortcut frame-layout-0  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div id="c630" class="frame frame-default frame-type-menu_pages frame-layout-10  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <ul class="sidenav">
+
+
+
+                                <a href="/maibaum-aktion" title="Maibaum-Aktion">
+                                <li>
+                                    <span>Maibaum-Aktion</span>
+                                </li>
+                                </a>
+
+
+
+
+                                <a href="/maibaum-aktion/infos-teilnahmebedingungen" title="Infos &amp; Bedingungen">
+                                <li>
+                                    <span>Infos &amp; Bedingungen</span>
+                                </li>
+                                </a>
+
+
+
+
+                                <a href="/maibaum-aktion/infos-teilnahmebedingungen/landkreise" title="Landkreise und Orte">
+                                <li>
+                                    <span>Landkreise und Orte</span>
+                                </li>
+                                </a>
+
+
+
+
+                                <a href="/maibaum-aktion/infos-teilnahmebedingungen/maibaumfreunde" title="Maibaumfreunde ND-SOB mit Lechgebiet e.V">
+                                <li>
+                                    <span>Maibaumfreunde ND-SOB mit Lechgebiet e.V</span>
+                                </li>
+                                </a>
+
+
+
+
+                                <a href="/maibaum-aktion/verlosung" title="Verlosung">
+                                <li>
+                                    <span>Verlosung</span>
+                                </li>
+                                </a>
+
+
+
+
+                                <a href="/maibaum-aktion/voting" title="Voting">
+                                <li>
+                                    <span>Voting</span>
+                                </li>
+                                </a>
+
+
+
+
+                                <a href="/maibaum-aktion/gewinner" title="Gewinner der Jahrgänge">
+                                <li>
+                                    <span>Gewinner der Jahrgänge</span>
+                                </li>
+                                </a>
+
+
+                </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+    </div>
+
+
+
+
+                </div>
+                <div class="col-12 col-lg-6">
+
+
+
+    <div class="content0 container">
+
+
+
+            <div id="c599" class="frame frame-default frame-type-textmedia frame-layout-0  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <header>
+
+
+
+
+
+
+
+            <h2 class="ce-header ">
+                Maibaum-Voting Registrierung
+            </h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </header>
+
+
+
+
+
+
+
+
+
+        <div class="ce-textpic ce-center ce-above">
+
+
+
+
+
+
+
+
+                    <div class="ce-bodytext">
+
+                        <p>Bitte registrieren Sie sich, um an der Abstimmung für die schönsten Maibäume und an der damit verbundenen Verlosung teilzunehmen.</p>
+<p>Nach dem Ausfüllen des untenstehenden Formulars erhalten Sie eine Mail mit Bestätigungslink. <strong>Sollten Sie diese nicht finden können, schauen Sie bitte auch in den Ordnern für Spam / Junk / Unerwünschte Werbung in Ihrem E-Mail Postfach nach.</strong></p>
+<p><strong>Mit dem kostenlosen E-Mail-Service von web.de sind aktuell Probleme bekannt - bitte weichen Sie, sofern möglich, vorläufig auf einen anderen E-Mail-Provider aus.</strong> Wir bemühen uns um eine schnelle Lösung.</p>
+                    </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+            <div id="c598" class="frame frame-default frame-type-list frame-layout-0  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="tx-femanager" data-labels="{&quot;loading_states&quot;:&quot;Lade Bundesl\u00e4nder ...&quot;,&quot;please_choose&quot;:&quot;Bitte w\u00e4hlen...&quot;}">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div class="femanager_new">
+		<form data-femanager-plugin="598" enctype="multipart/form-data" name="user" class="form-horizontal feManagerValidation" action="/maibaum-aktion/registrierung?tx_femanager_pi1%5Baction%5D=create&amp;tx_femanager_pi1%5Bcontroller%5D=New&amp;cHash=cc4f95caec056b52c895517b089646cc" method="post">
+<div>
+<input type="hidden" name="tx_femanager_pi1[__referrer][@extension]" value="Femanager">
+<input type="hidden" name="tx_femanager_pi1[__referrer][@controller]" value="New">
+<input type="hidden" name="tx_femanager_pi1[__referrer][@action]" value="new">
+<input type="hidden" name="tx_femanager_pi1[__referrer][arguments]" value="YTowOnt9dd742e89a506c2d114fd96a75a4993753fc57a3b">
+<input type="hidden" name="tx_femanager_pi1[__referrer][@request]" value="{&quot;@extension&quot;:&quot;Femanager&quot;,&quot;@controller&quot;:&quot;New&quot;,&quot;@action&quot;:&quot;new&quot;}be0d99b3a6ce3bf90b80cb72753f29119023d1a1">
+<input type="hidden" name="tx_femanager_pi1[__trustedProperties]" value="{&quot;user&quot;:{&quot;username&quot;:1,&quot;password&quot;:1,&quot;firstName&quot;:1,&quot;lastName&quot;:1,&quot;address&quot;:1,&quot;zip&quot;:1,&quot;city&quot;:1,&quot;telephone&quot;:1,&quot;terms&quot;:1},&quot;password_repeat&quot;:1}b6b19c2db59eb3ed709445953f4dbf4288d34cee">
+</div>
+
+			<fieldset>
+				<legend>
+					Neues Benutzerprofil erstellen
+				</legend>
+
+
+
+
+
+<div class="femanager_fieldset femanager_username form-group">
+	<label for="femanager_field_username" class="col-sm-2 control-label">
+		Ihre E-Mail-Adresse
+
+			<span>*</span>
+
+	</label>
+	<div class="col-sm-10">
+		<input data-validation="required,,mustNotInclude(space),uniqueInPage,email" class="form-control" id="femanager_field_username" type="text" name="tx_femanager_pi1[user][username]">
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_password form-group">
+	<label for="femanager_field_password" class="col-sm-2 control-label">
+		Passwort
+
+			<span>*</span>
+
+	</label>
+	<div class="col-sm-10">
+		<input data-validation="required" class="form-control" id="femanager_field_password" type="password" name="tx_femanager_pi1[user][password]" value="">
+	</div>
+</div>
+
+<div class="femanager_fieldset femanager_password_repeat form-group">
+	<label for="femanager_field_password_repeat" class="col-sm-2 control-label">
+		Passwort wiederholen
+
+			<span>*</span>
+
+	</label>
+	<div class="col-sm-10">
+		<input data-validation="required,sameAs(password)" class="form-control" id="femanager_field_password_repeat" type="password" name="tx_femanager_pi1[password_repeat]" value="">
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_firstname form-group">
+	<label for="femanager_field_firstName" class="col-sm-2 control-label">
+		Vorname
+
+			<span>*</span>
+
+	</label>
+	<div class="col-sm-10">
+		<input data-validation="required" class="form-control" id="femanager_field_firstName" type="text" name="tx_femanager_pi1[user][firstName]">
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_lastname form-group">
+	<label for="femanager_field_lastName" class="col-sm-2 control-label">
+		Nachname
+
+			<span>*</span>
+
+	</label>
+	<div class="col-sm-10">
+		<input data-validation="required" class="form-control" id="femanager_field_lastName" type="text" name="tx_femanager_pi1[user][lastName]">
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_address form-group">
+	<label for="femanager_field_address" class="col-sm-2 control-label">
+		Straße &amp; Hausnr.
+
+	</label>
+	<div class="col-sm-10">
+		<textarea class="form-control" id="femanager_field_address" name="tx_femanager_pi1[user][address]"></textarea>
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_zip form-group">
+	<label for="femanager_field_zip" class="col-sm-2 control-label">
+		PLZ
+
+	</label>
+	<div class="col-sm-10">
+		<input class="form-control" id="femanager_field_zip" type="text" name="tx_femanager_pi1[user][zip]">
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_city form-group">
+	<label for="femanager_field_city" class="col-sm-2 control-label">
+		Stadt
+
+	</label>
+	<div class="col-sm-10">
+		<input class="form-control" id="femanager_field_city" type="text" name="tx_femanager_pi1[user][city]">
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_telephone form-group">
+	<label for="femanager_field_telephone" class="col-sm-2 control-label">
+		Telefon
+
+	</label>
+	<div class="col-sm-10">
+		<input class="form-control" id="femanager_field_telephone" type="text" name="tx_femanager_pi1[user][telephone]">
+	</div>
+</div>
+
+
+
+<div class="femanager_fieldset femanager_terms form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+            <label class="checkbox">
+                <input type="hidden" name="tx_femanager_pi1[user][terms]" value=""><input id="femanager_field_terms" type="checkbox" name="tx_femanager_pi1[user][terms]" value="Terms and conditions">
+                Ich habe die Bedingungen gelesen und akzeptiert
+
+
+                        (<a href="/maibaum-aktion/infos-teilnahmebedingungen">Nutzungsbedingungen</a>)
+
+            </label>
+        </div>
+    </div>
+</div>
+
+
+						<div class="femanager_fieldset femanager_submit form-group">
+	<div class="col-sm-10 col-sm-offset-2">
+		<input class="btn btn-primary btn-large" id="femanager_field_submit" type="submit" value="Jetzt registrieren">
+	</div>
+</div>
+
+
+			</fieldset>
+		</form>
+	</div>
+
+
+	<div class="hidden" style="display: none;">
+
+	<input type="hidden" id="femanagerLanguage" value="0">
+
+
+	<input type="hidden" id="femanagerStoragePid" value="96">
+
+
+	<input type="hidden" id="femanagerPid" value="91">
+
+
+	<div class="femanager_validation_container">
+		<div class="alert bg-danger">
+			<button type="button" class="close" data-dismiss="alert">×</button>
+			<h4>Fehler</h4>
+			###messages###
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+    </div>
+
+
+
+
+                </div>
+                <div class="col-12 col-lg-3">
+
+
+
+    <div class="content2 container">
+
+
+
+            <div id="c601" class="frame frame-default frame-type-textmedia frame-layout-0  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <header>
+
+
+
+            <h3 class="ce-header ">
+                Schon registriert?
+            </h3>
+
+
+
+
+
+
+
+
+
+
+
+
+        </header>
+
+
+
+
+
+
+
+
+
+        <div class="ce-textpic ce-center ce-above">
+
+
+
+
+
+
+
+
+                    <div class="ce-bodytext">
+
+                        <p>Wenn Sie sich schon für das Maibaum-Voting registriert haben, können Sie sich hier einloggen.</p>
+                    </div>
+
+
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+
+
+            <div id="c600" class="frame frame-default frame-type-felogin_login frame-layout-0  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <h3>
+
+Benutzeranmeldung
+
+
+    </h3>
+    <p>
+
+Bitte geben Sie Ihre E-Mail-Adresse und das Passwort ein, um sich anzumelden.
+
+
+    </p>
+
+
+        <form spellcheck="false" target="_top" action="/maibaum-aktion/registrierung?tx_felogin_login%5Baction%5D=login&amp;tx_felogin_login%5Bcontroller%5D=Login&amp;cHash=a42a778e6210d6cdf2c0fdac0e89338d" method="post">
+<div>
+<input type="hidden" name="__referrer[@extension]" value="Felogin">
+<input type="hidden" name="__referrer[@controller]" value="Login">
+<input type="hidden" name="__referrer[@action]" value="login">
+<input type="hidden" name="__referrer[arguments]" value="YTowOnt9dd742e89a506c2d114fd96a75a4993753fc57a3b">
+<input type="hidden" name="__referrer[@request]" value="{&quot;@extension&quot;:&quot;Felogin&quot;,&quot;@controller&quot;:&quot;Login&quot;,&quot;@action&quot;:&quot;login&quot;}48757c9f12ace74e642166156991b0459130ea58">
+<input type="hidden" name="__trustedProperties" value="{&quot;user&quot;:1,&quot;pass&quot;:1,&quot;submit&quot;:1,&quot;logintype&quot;:1,&quot;pid&quot;:1}da48ed54fbe7716c9945a845f690163aa9a537a4">
+</div>
+
+
+    <fieldset>
+        <legend>
+            Anmelden
+        </legend>
+        <div>
+            <label>
+                E-Mail-Adresse
+                <input autocomplete="username" type="text" name="user" required="required">
+            </label>
+        </div>
+        <div>
+            <label>
+                Passwort:
+                <input required="required" autocomplete="current-password" type="password" name="pass" value="">
+            </label>
+        </div>
+
+
+
+        <div>
+            <input type="submit" value="Anmelden" name="submit">
+        </div>
+
+        <div class="felogin-hidden">
+            <input type="hidden" name="logintype" value="login">
+            <input type="hidden" name="pid" value="96@cea2ac70ca4f4c3ba962e26a5d60678d1ac0fa7a">
+
+
+
+
+        </div>
+    </fieldset>
+
+        </form>
+
+
+
+    <a href="/maibaum-aktion/registrierung?tx_felogin_login%5Baction%5D=recovery&amp;tx_felogin_login%5Bcontroller%5D=PasswordRecovery&amp;cHash=d1a3511161ab162ece696aed1f1a02ff">
+
+Passwort vergessen?
+
+
+    </a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+    </div>
+
+
+
+
+                </div>
+            </div>
+
+            <!--TYPO3SEARCH_end-->
+    </div></main>
+    </div>
+
+
+
+<div id="scrollToTop">
+    <i class="icon-chevron-circle-up"></i>
+</div>
+
+<footer>
+    <div class="pageFooter1">
+        <div class="container">
+
+
+
+            <div id="c394" class="frame frame-default frame-type-textmedia frame-layout-245  ">
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="footer-banner">
+
+    <h3>BIER AUS UNTERBAAR</h3>
+
+
+
+    <div class="ce-gallery" data-ce-columns="1" data-ce-images="1">
+
+            <div class="ce-outer">
+                <div class="ce-inner">
+
+
+            <div class="ce-row">
+
+
+                        <div class="ce-column">
+
+
+
+<figure class="image">
+
+
+
+<img data-caption="<strong></strong><br> " data-height="97" class="image-embed-item" src="/fileadmin/user_upload/logo-footer.png" width="100" height="97" alt="">
+
+
+
+
+</figure>
+
+
+
+
+
+                        </div>
+
+
+            </div>
+
+
+                </div>
+            </div>
+
+    </div>
+
+
+
+
+
+    <h3>EINFACH WUNDERBAAR&nbsp;</h3>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="pageFooter2">
+        <div class="container">
+
+
+
+
+
+
+
+<div id="c397" class="frame frame-default	frame-type-containerGrid_50_50 frame-layout-0
+    "><div class="row rowContainer rowgridelement row2col row-55-55 "><div class="col-md-6 colpos21  "><div id="c402" class="frame frame-default frame-type-textmedia frame-layout-0  "><div class="ce-textpic ce-center ce-above"><div class="ce-bodytext"><h3>LINKS</h3></div></div></div><div id="c398" class="frame frame-default	frame-type-containerGrid_50_50 frame-layout-0
+    "><div class="row rowContainer rowgridelement row2col row-55-55 "><div class="col-md-6 colpos21  "><div id="c399" class="frame frame-default frame-type-menu_pages frame-layout-0  "><ul><li><a href="/" title="Home"><span>Home</span></a></li><li><a href="/brauerei/qualitaet" title="Qualität"><span>Qualität</span></a></li><li><a href="/feste/das-brauereifest" title="Feste"><span>Feste</span></a></li><li><a href="/cubana" title="Cubana"><span>Cubana</span></a></li><li><a href="/unser-service/event-service" title="Event-Service"><span>Event-Service</span></a></li></ul></div></div><div class="col-md-6 colpos22  "><div id="c400" class="frame frame-default frame-type-menu_pages frame-layout-0  "><ul><li><a href="/brauerei/tradition" title="Tradition"><span>Tradition</span></a></li><li><a href="/brauerei/region" title="Region"><span>Region</span></a></li><li><a href="/biere" title="Biere"><span>Biere</span></a></li><li><a href="/unser-service/liefergebiet" title="Liefergebiet"><span>Liefergebiet</span></a></li><li><a href="/unser-service/ansprechpartner" title="Ansprechpartner"><span>Ansprechpartner</span></a></li></ul></div></div></div></div></div><div class="col-md-6 colpos22  "><div id="c589" class="frame frame-default	frame-type-containerGrid_100 frame-layout-0
+    "><div class="row rowContainer rowgridelement row1col row-100 "><div class="col-12 colpos21   d-none d-md-block"><div id="c401" class="frame frame-default frame-type-textmedia frame-layout-0  "><header><h3 class="">
+                REGIONAL FÜR SIE DA
+            </h3></header><div class="ce-textpic ce-center ce-above"><div class="ce-bodytext"><p>Die Schlossbrauerei Unterbaar im Örtchen Baar liegt zwischen Donauwörth, Neuburg, Schrobenhausen, Aichach und Augsburg im schönen Bayern.</p><p>Unser Liefergebiet reicht&nbsp;bis Nördlingen, Dillingen, Landsberg und Pfaffenhofen.</p></div></div></div></div></div></div></div></div></div>
+
+
+
+
+        </div>
+    </div>
+    <div class="pageFooter3">
+        <div class="container d-md-flex justify-content-between">
+            <p class="copyright">© 2024 Schlossbrauerei Unterbaar</p>
+            <ul class="navFooter list-inline"><li class="list-inline-item"><a href="https://www.facebook.com/SchlossbrauereiUnterbaarer/" target="_blank"><i class="fa-brands fa-square-facebook"></i></a></li><li class="list-inline-item"><a href="/kontakt">Kontakt</a></li><li class="list-inline-item"><a href="/impressum">Impressum</a></li><li class="list-inline-item"><a href="/datenschutz">Datenschutz</a></li></ul>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+<div id="cookieman-modal" data-cookieman-showonce="1" data-cookieman-settings="{&quot;groups&quot;:{&quot;mandatory&quot;:{&quot;preselected&quot;:true,&quot;disabled&quot;:true,&quot;trackingObjects&quot;:[&quot;CookieConsent&quot;]}},&quot;trackingObjects&quot;:{&quot;CookieConsent&quot;:{&quot;show&quot;:{&quot;CookieConsent&quot;:{&quot;duration&quot;:&quot;1&quot;,&quot;durationUnit&quot;:&quot;year&quot;,&quot;type&quot;:&quot;cookie_http+html&quot;,&quot;provider&quot;:&quot;Website&quot;}}}}}" class="modal fade show" tabindex="-1" role="dialog" aria-modal="true" style="display: block;"><div class="modal-dialog modal-xl"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="cookieman-modal-title">
+                    Hinweis zu Cookies
+                </h5></div><div class="modal-body"><p>
+                    Unsere Webseite verwendet Cookies. Diese haben zwei Funktionen: Zum einen sind sie erforderlich für die grundlegende Funktionalität unserer Website. Zum anderen können wir mit Hilfe der Cookies unsere Inhalte für Sie immer weiter verbessern. Hierzu werden pseudonymisierte Daten von Website-Besuchern gesammelt und ausgewertet. Das Einverständnis in die Verwendung der Cookies können Sie jederzeit widerrufen. Weitere Informationen zu Cookies auf dieser Website finden Sie in unserer <a href="/datenschutz">Datenschutzerklärung</a> und zu uns im <a href="/impressum">Impressum</a>.
+                </p><button class="btn btn-secondary btn-sm float-right collapsed pr-5" type="button" data-bs-toggle="collapse" data-bs-target="#cookieman-settings" aria-expanded="false" aria-controls="cookieman-settings">
+                    Einstellungen
+                </button><div class="clearfix"></div><div class="collapse" id="cookieman-settings"><form data-cookieman-form="" class="mt-3" data-cookieman-dnt-enabled="Sie haben bereits über die <a target=&quot;_blank&quot; rel=&quot;noopener&quot; href=&quot;https://de.wikipedia.org/wiki/Do_Not_Track_(Software)&quot;>Do-Not-Track-Funktion Ihres Browsers</a> der Erstellung von Nutzungsprofilen widersprochen. Dies akzeptieren wir. Sie können diese Funktion über die Einstellungen Ihres Browsers anpassen."><div class="accordion" id="cookieman-acco"><div class="accordion-item"><h2 class="accordion-header" id="cookieman-acco-h-mandatory"><button type="button" class="accordion-button collapsed" role="button" data-bs-toggle="collapse" data-bs-target="#cookieman-acco-mandatory" aria-expanded="false" aria-controls="cookieman-acco-mandatory">
+                                        Erforderlich
+                                      </button></h2><div id="cookieman-acco-mandatory" class="accordion-collapse collapse" aria-labelledby="cookieman-acco-h-mandatory" data-bs-parent="#cookieman-acco"><div class="accordion-body"><div class="alert alert-primary"><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="mandatory" name="mandatory" checked="checked" disabled="disabled"><label class="form-check-label" for="mandatory">
+                                                    Zustimmen
+                                                </label></div></div><p>
+                                            Diese Cookies werden für eine reibungslose Funktion unserer Website benötigt.
+                                        </p><div class="table-responsive"><table class="table table-hover table-sm"><thead><tr><th>Name</th><th>Zweck</th><th>Ablauf</th><th>Typ</th><th>Anbieter</th></tr></thead><tbody><tr><td>
+                CookieConsent
+            </td><td>
+                Speichert Ihre Einwilligung zur Verwendung von Cookies.
+            </td><td>
+                1
+                Jahr
+            </td><td>
+                HTML
+            </td><td>
+
+                    Website
+
+            </td></tr></tbody></table></div></div></div></div></div></form></div></div><div class="modal-footer"><button data-cookieman-accept-none="" data-cookieman-save="" class="btn btn-secondary">Nur essenzielle Cookies</button><button hidden="" data-cookieman-save="" class="btn btn-light">
+                    Speichern
+                </button><button data-cookieman-accept-all="" data-cookieman-save="" class="btn btn-primary">
+                    Alle Cookies akzeptieren
+                </button></div></div></div></div>
+
+<script src="/typo3conf/ext/femanager/Resources/Public/JavaScript/Validation.min.js?1702464292"></script>
+<script src="/typo3conf/ext/femanager/Resources/Public/JavaScript/Femanager.min.js?1702464292"></script>
+<script src="/typo3conf/ext/cookieman/Resources/Public/Js/js.cookie.min.js?1674562497"></script>
+<script src="/typo3conf/ext/cookieman/Resources/Public/Js/cookieman.min.js?1674562497"></script>
+<script src="/typo3conf/ext/cookieman/Resources/Public/Themes/bootstrap5-modal/cookieman-theme.min.js?1674562497"></script>
+<script src="/typo3conf/ext/cookieman/Resources/Public/Js/cookieman-init.min.js?1674562497"></script>
+<script src="/typo3conf/ext/unterbaar_theme/Resources/Public/Contrib/smartmenus-1.1.1/jquery.smartmenus.min.js?1667211422"></script>
+<script src="/typo3conf/ext/t3basic/Resources/Public/Contrib/fancybox3/jquery.fancybox.min.js?1667209855"></script>
+<script src="/typo3conf/ext/t3basic/Resources/Public/Contrib/aos-master/dist/aos.js?1667209855"></script>
+<script src="/typo3conf/ext/t3basic/Resources/Public/Contrib/bootstrap-5.1.3/dist/js/bootstrap.bundle.min.js?1667209855"></script>
+<script src="/typo3conf/ext/t3basic/Resources/Public/Contrib/slick/slick.min.js?1667209855"></script>
+<script src="/typo3conf/ext/unterbaar_theme/Resources/Public/Js/Dist/scripts.js?1671458074"></script>
+<script src="/typo3conf/ext/galleryvoting/Resources/Public/Js/scripts.js?1671797755"></script>
+
+
+
+
+<div class="modal-backdrop fade show"></div></body></html>
